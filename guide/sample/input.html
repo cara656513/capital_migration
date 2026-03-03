@@ -100,10 +100,10 @@
                                     <div class="form-wrap">
                                         <div class="form-group">
                                             <span class="ipt-clear"><input id="password-input" type="text" name="text" class="form-control" placeholder="내용을 입력해주세요" value="유효성체크 에러" aria-invalid="true" /></span>
-                                            <span id="wrt02-error" class="error" role="alert">에러가 생성되었을시 문구생성 성공일시는 p.error태그 삭제나 hidden 처리</span>
+                                            <p id="wrt02-error" class="error" role="alert">에러가 생성되었을시 문구생성 성공일시는 p.error태그 삭제나 hidden 처리</p>
                                         </div>
                                         <div class="form-group">
-                                            <span class="ipt-clear"><input id="password-input" type="text" name="text" class="form-control" placeholder="내용을 입력해주세요" value="타이틀추가 필요 마우스 오버했을때 보여지는 툴팁효과 필요합니다. 마우스오버해보세요" /></span>
+                                            <span class="ipt-clear"><input id="password-input" title="타이틀추가 필요 마우스 오버했을때 보여지는 툴팁효과 필요합니다. 마우스오버해보세요" type="text" name="text" class="form-control" placeholder="내용을 입력해주세요" value="타이틀추가 필요 마우스 오버했을때 보여지는 툴팁효과 필요합니다. 마우스오버해보세요" /></span>
                                         </div>
                                     </div>
                                 </div>
@@ -178,23 +178,35 @@
                         <div>
                             <p style="padding-bottom:30px;">첨부 기능을 통해 업로드된 파일을 화면에 표시하는 영역이다. 사용자가 첨부한 파일 이름과 삭제 버튼(아이콘)을 함께 제공해,
                                 필요할 때 해당 파일을 손쉽게 제거할 수 있다. 한 화면에 최대 3개까지 배치하며, 파일 간 간격은 16px로 유지한다.</p>
-                            <div class="form-container">
-                                <div class="form-content">
-                                    <div class="form-wrap">
-                                        <div class="form-group">
-                                            <span class="ipt-file">
-                                                <span class="ipt-clear"><input class="form-control upload-text uploadInput" type="text" placeholder="파일을 입력해주세요" tabindex="0" readonly>
-                                                </span>
-                                                <label class="upload-label" for="files">
-                                                    <input id="files" class="upload" name="files" type="file" />
-                                                    <span class="sr-only fileLabel">파일선택</span>
-                                                </label>
-                                            </span>
-                                            
-                                        </div>
-                                    </div>
+                            <p style="margin:10px 0; color:#333333;">ㅁ 파일 등록</p>
+                            <div class="ipt-content">
+                                <div class="ipt-file flex-row">
+                                    <label class="upload-label " for="files2">
+                                        <input id="files2" class="upload" name="files2" type="file">
+                                        <span class="fileLabel">선택된 파일 없음</span>
+                                    </label>
+                                    <button type="button" class="btn-form uploadButton">파일 선택</button>
                                 </div>
-                                <!--//form-content-->
+                            </div>
+                            <p style="margin:10px 0; color:#333333;">ㅁ 이미지 등록</p>
+                            <div class="photo-content">
+                                <p class="img-photo">
+                                    <span class="sr-only">등록된 사진이 없습니다.</span>
+                                </p>
+                                <dl>
+                                    <dt class="rfrnc">사진등록</dt>
+                                    <dd> - 사진이미지의 권장사이즈는 103px*132px 입니다.</dd>
+                                    <dd>  - 다른 사이즈의 이미지를 업로드 할 경우 이미지가 비정상적으로 출력될 수 있습니다.</dd>
+                                    <dd>
+                                        <span class="ipt-file">
+                                            <button type="button" class="btn-form uploadButton">파일 선택</button>
+                                            <label class="upload-label">
+                                                <input id="files" class="upload" name="files" type="file">
+                                            </label>
+                                            <span class="fileLabel"></span>
+                                        </span>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -219,25 +231,54 @@
                                             <input id="phn-third2" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">  
                                         </div><!--//flex-row-->
                                     </div><!--//form-group-->
-                                    <div class="form-group">
-                                        <label for="captcha-input2">보안문자</label>
-                                        <div class="flex-row mo-column">
-                                            <div class="captcha">
-                                                <p class="img-captcha">캡챠이미지 영역</p>
-                                                <button type="button" class="btn-form captcha-audio"><span class="sr-only">보안문자 음성듣기</span></button>
-                                                <button type="button" class="btn-form reset"><span class="sr-only">보안문자</span>새로고침</button>
-                                            </div>
-                                            <input id="captcha-input2" name="captcha-input2" type="text" inputmode="latin" pattern="[A-Za-z0-9]{6}" maxlength="6" placeholder="보안문자 6자리" required="">
-                                            <button class="btn-form">인증번호 발송</button>
-                                        </div><!--//flex-row-->
-                                    </div><!--//form-group-->
                                 </div><!--//form-wrap-->
                                 <div class="form-wrap">
                                     <div class="form-group">
-                                        <label for="auth-code2">인증번호</label>
+                                        <p class="label-tit">인증번호</p>
                                         <div class="flex-row mo-column">
+                                            <label for="auth-code2" class="sr-only">인증번호</label>
                                             <input id="auth-code2" type="number" name="auth-code2" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)">
                                             <button class="btn-form">확인</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="label-tit">휴대전화번호</p>
+                                        <div class="flex-row mo-column">
+                                            <div>
+                                                <label for="phn-first" class="sr-only">전화번호 선택</label>
+                                                <select id="phn-first" required="">
+                                                    <option value="0">010</option>
+                                                    <option value="1">017</option>
+                                                    <option value="3">019</option>
+                                                </select>
+                                                <label for="phn-second" class="sr-only">전화번호 두번째자리</label>
+                                                <input id="phn-second" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
+                                                <label for="phn-third" class="sr-only">전화번호 세번째자리</label>
+                                                <input id="phn-third" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">
+                                            </div>
+                                            <!--[D]:공통 - 알럿참고 -->
+                                            <button class="btn-form" data-modal-open="modal">조회</button>
+                                        </div><!--//flex-row-->
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <p class="label-tit">인증번호</p>
+                                        <div class="flex-row mo-column">
+                                            <label for="auth-code3" class="sr-only">인증번호</label>
+                                            <input id="auth-code3" type="number" name="auth-code3" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)">
+                                            <button class="btn-form">확인</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <div class="date-wrap">
+                                            <label for="serviceStart" class="sr-only">복무 시작일</label>
+                                            <input type="date" id="serviceStart" name="serviceStart" class="js-cal js-cal-date" placeholder="YYYY-MM-DD" />
                                         </div>
                                     </div>
                                 </div>
