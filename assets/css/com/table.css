@@ -88,6 +88,11 @@ table:has(.no-results) td { margin:0; padding:0; border:0; }
 /**테이블**/
 table.round { border:var(--table-border); border-bottom:0; border-collapse:separate; border-radius:16px; overflow:hidden; }
 
+/* 테이블 강조, 합계 클래스 26/03/03 추기*/
+thead th.success, tbody th.success { background-color:var(--primary); color: var(--white) !important; }
+.table-content table .sum  { font-weight:var(--font-w-m); color:var(--white); background-color:#0072BC; }
+.table-content th.sum ~ td {background-color: #EDF9FF;}
+
 @media (max-width:1200px){
     /* .table-content:has(.mo-s) { overflow-x:auto; } */
     .table-content:has(.mo-s) table { table-layout:auto; }
