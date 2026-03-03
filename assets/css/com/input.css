@@ -19,13 +19,12 @@ body{
   --form-focus-font-color:var(--color-2);
   --form-check-font-color:var(--color-75);
   --form-checkbox:url("../../images/com/svg/ico_form_check.svg");
-  --form-checked:#0098CB;/*26.2.2 접근성*/
+  --form-checked:#0098CB;
   --form-check-dissbled:#9CB1C4;
   --fonm-file-button:#F6F7FB;
-  --form-checkbox-border:#8D8D8D;/*26.2.2 접근성*/
+  --form-checkbox-border:#8D8D8D;
   --form-radio-bg:var(--color-f7);
   --form-date-ico:url("../../images/com/svg/ico_date.svg");
-  /* --ico-search:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.625' height='16.624'%3E%3Cpath fill='%23999' d='M11.093 11.942a6.731 6.731 0 0 1-4.335 1.573A6.757 6.757 0 0 1 0 6.758 6.758 6.758 0 0 1 6.758 0a6.758 6.758 0 0 1 6.758 6.758 6.729 6.729 0 0 1-1.574 4.335l4.683 4.683-.849.848ZM1.199 6.758a5.558 5.558 0 0 0 5.558 5.557 5.558 5.558 0 0 0 5.557-5.557A5.558 5.558 0 0 0 6.757 1.2 5.558 5.558 0 0 0 1.2 6.758Z'/%3E%3C/svg%3E");*/
   --ico-search:url("../../images/com/svg/ico_search.svg");
   --ico-file:url("../../images/com/svg/ico_file.svg");
 
@@ -104,23 +103,23 @@ label.check{ gap:14px; }
 label.radio { gap:6px; padding:6px 13px 8px; background:var(--form-radio-bg); border-radius:100px;}
 label input[type="radio"] { position:relative; width:28px; height:28px; border-radius:50%; background:var(--white); overflow:hidden; }
 label input[type="checkbox"],
-.terms input[type="checkbox"] { position:relative; width:30px; height:30px; border:1px solid var(--form-checkbox-border); overflow:hidden; border-radius:50%;  }/*26.2.2 웹접근성*/
-.terms input[type="checkbox"]:checked { background:var(--form-board); }/*26.2.2 웹접근성*/
+.terms input[type="checkbox"] { position:relative; width:30px; height:30px; border:1px solid var(--form-checkbox-border); overflow:hidden; border-radius:50%;  }
+.terms input[type="checkbox"]:checked { background:var(--form-board); }
 
 label input[type="checkbox"]::before,
 .terms input[type="checkbox"]::before { content:""; display:block; width:100%; height:100%; background:var(--white); mask-image:var(--form-checkbox); mask-position:center; mask-repeat:no-repeat; mask-size:15px auto; --webkit-mask-image:var(--form-checkbox); --webkit-mask-position:center; --webkit-mask-repeat:no-repeat; --webkit-mask-size:15px auto; }
 label input[type="checkbox"]:not(:checked),
 .terms input[type="checkbox"]:not(:checked) { background:var(--f9); }
 label input[type="checkbox"]:not(:checked)::before,
-.terms input[type="checkbox"]:not(:checked)::before { mask-image:none; }/*26.2.2 웹접근성*/
+.terms input[type="checkbox"]:not(:checked)::before { mask-image:none; }
 label input[type="checkbox"]:checked,
 .terms input[type="checkbox"]:checked { background:var(--form-checked); } 
 label input[type="checkbox"]:disabled,
 .terms input[type="checkbox"]:disabled { background:var(--form-check-dissbled); } 
 label input:not(:checked) + span { flex:1; width:100%; font-weight:var(--font-w-m); color:var(--color-45); }
-label input:checked + span { flex:1; width:100%; color:var(--form-font-color); font-weight:500; } /*여기까지*/
+label input:checked + span { flex:1; width:100%; color:var(--form-font-color); font-weight:500; }
 label input:not(:checked) + span { font-weight:400; }
-label input[type="radio"]:not(:checked) { border:2px solid #8d8d8d;  }/*26.2.2 웹접근성*/
+label input[type="radio"]:not(:checked) { border:2px solid #8d8d8d;  }
 label input[type="radio"]:checked { border:7px solid var(--form-checked);  }
 label input[type="radio"]:disabled { border:7px solid var(--form-check-dissbled);  }
 
@@ -135,26 +134,6 @@ label.radio.button:has(input:checked) { background:var(--white); border-color:va
 .textarea-wrap textarea { padding-bottom:30px; }
 .textarea-wrap .char-counter { position:absolute; bottom:10px; right:16px; color:var(--color-6);  }
 .textarea-wrap .char-counter .current { color:var(--color-2); font-weight:var(--font-w-m); }
-
-/** 약관동의 **/
-[class*="-container"] form:has(.terms) { margin:32px 0 72px; }
-.terms li { position: relative; display:flex; align-items:center; gap:14px; padding:23px 20px; border-bottom:1px solid var(--color-d); font-size:0; }
-.terms:not(:has(.check-all-area)) li:first-child { border-top:1px solid var(--color-2); }
-.terms input[type="checkbox"] { display:inline-block; }
-.terms input[type="checkbox"] + label { display:inline-block; position:relative; margin:0; min-height:30px; line-height:30px; color:var(--color-45); font-weight:var(--font-w-m); font-size:1rem; }
-.terms input[type="checkbox"]:checked  + label span { font-weight:var(--font-w-m); color:var(--from-font-color); }
-
-/* 전체동의 */
-.terms li.check-all-area { margin-bottom:9px; border-bottom:1px solid var(--color-2); }
-.terms li.check-all-area input[type="checkbox"]:checked { background-color:var(--primary); }
-
-/* 내용보기 버튼 */
-ul.check-box.terms li .modal { position:absolute; top:50%; right:20px; transform: translateY(-50%); }
-.form-group .modal { padding:10px 24px; background: var(--white); border: 1px solid var(--color-d); border-radius:100px; color: var(--color-6); font-size: var(--font16); font-weight:var(--font-w-m); }
-
-/* 약관동의 인포 */
-.form-content:has(.terms) .info-list .m-dot li { margin-top:18px; font-size:var(--font18); color:var(--color-6); }
-.form-content:has(.terms) .info-list .m-dot li::before { content: "·"; margin-right: 5px; }
 
 label.toggle {
     --w: 40px;
@@ -313,7 +292,7 @@ input[type="month"]+ button,
     #container > .form-container { padding:54px 0 72px; }
 
     /**인풋**/
-    .form-content label { margin-bottom:10px; font-size:var(--font16); font-weight:var(--font-w-m); color:var(--color-2); }
+    .form-content label { margin-bottom:10px; padding:6px 24px 8px 0; font-size:var(--font16); font-weight:var(--font-w-m); color:var(--color-2); }
     .form-content select {  background-size:12px auto; }
 
     .form-group input[type="text"], .form-group input[type="password"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="tel"], .form-group input[type="search"], .form-group input[type="date"], .form-group input[type="month"], .form-group input[type="datepicker"], .form-group select, .form-group textarea { flex: 1 1 var(--fonm-height); }
