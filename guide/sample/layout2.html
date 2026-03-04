@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>샘플 페이지 (공통 체크)</title>
+
+    <meta name="keywords" content="MG캐피탈" />
+    <meta name="copyright" content="copyrights 2025 MG캐피탈" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.mgcap.co.kr/favicon.ico"/>
+    
+    <link rel="stylesheet" href="../../assets/css/com/default.css" />
+    <link rel="stylesheet" href="../../assets/css/com/common.css" />
+    <link rel="stylesheet" href="../../assets/css/com/style.css" />
+    <link rel="stylesheet" href="../../assets/css/com/fonts.css" />
+    <link rel="stylesheet" href="../../assets/css/com/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/com/nav.css" />
+    <link rel="stylesheet" href="../../assets/css/com/input.css" />
+    <link rel="stylesheet" href="../../assets/css/com/button.css" />
+    <link rel="stylesheet" href="../../assets/css/com/tab.css" />
+    <link rel="stylesheet" href="../../assets/css/com/table.css" />
+    <link rel="stylesheet" href="../../assets/css/com/content.css" />
+    
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui-util.js"></script>
+    <script src="../../assets/js/include.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div data-include-path="../../views/COMMON/header.html"></div>
+        <div class="bodyWrap">
+            <main class="contentWrap">
+                <!-- 브레드크럼 -->
+                <nav class="location-container">
+                    <ol class="breadcrumb">
+                        <li><a href="/" id="contentArea"><span class="home">홈</span></a></li>
+                        <li><span>ㅇㅅㅇ</span></li>
+                        <li><span>ㅇㅅㅇ</span></li>
+                    </ol>
+                </nav>
+                
+                <section class="visual-container">
+                    <h2>샘플 페이지</h2>
+                </section>
+                
+                <section class="page-container">
+                    <div class="form-content"> 
+                        <div class="group">
+                            <div class="text-group">
+                                <h3>약관동의</h3>
+                            </div>
+                            
+                            <div class="form">
+                                <div class="form-group">
+                                    <ul class="check-box terms">
+                                        <li class="check-all-area">
+                                            <input type="checkbox" id="chkAll" />
+                                            <label for="chkAll" class="check-button">
+                                                <span>전체 약관에 동의합니다.</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check-req-1" class="chkReq" />
+                                            <label for="check-req-1" class="check-button" data-popup-open="fullPopup1">
+                                                <span>개인정보 수집·이용·취급위탁 동의</span>
+                                            </label>
+                                            <button title="내용보기" type="button" class="modal" data-popup-open="fullPopup1">약관 보기</button>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check-req-2" class="chkReq" />
+                                            <label for="check-req-2" class="check-button">
+                                                <span>본인확인서비스 이용약관</span>
+                                            </label>
+                                            <button title="내용보기" type="button" class="modal" data-popup-open="fullPopup2">약관 보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="group">
+                            <div class="text-group">
+                                <h3>정보입력</h3>
+                                <p>label-tit에 margin-bottom: 10px이 sample.css 에만 들어가 있음</p>
+                            </div>
+                            
+                            <fieldset class="form-content">
+                                <legend class="sr-only">정보입력 폼</legend>
+                                
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <p class="label-tit">이름</p>
+                                        <div class="flex-row">
+                                            <label for="inp-name" class="sr-only">이름</label>
+                                            <input id="inp-name" type="text" placeholder="이름을 입력해주세요" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <p class="label-tit">인증번호</p>
+                                        <div class="flex-row mo-column">
+                                            <label for="auth-code2" class="sr-only">인증번호</label>
+                                            <input id="auth-code2" type="number" name="auth-code2" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)">
+                                            <button class="btn-form">확인</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="label-tit">휴대전화번호</p>
+                                        <div class="flex-row mo-column">
+                                            <div>
+                                                <label for="phn-first" class="sr-only">전화번호 선택</label>
+                                                <select id="phn-first" required="">
+                                                    <option value="0">010</option>
+                                                    <option value="1">017</option>
+                                                    <option value="3">019</option>
+                                                </select>
+                                                <label for="phn-second" class="sr-only">전화번호 두번째자리</label>
+                                                <input id="phn-second" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
+                                                <label for="phn-third" class="sr-only">전화번호 세번째자리</label>
+                                                <input id="phn-third" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">
+                                            </div>
+                                            <button class="btn-form" data-modal-open="modal">조회</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <p class="label-tit">휴대전화번호</p>
+                                        <div class="flex-row mo-column">
+                                            <div>
+                                                <label for="phn-first" class="sr-only">전화번호 선택</label>
+                                                <select id="phn-first" required="">
+                                                    <option value="0">010</option>
+                                                    <option value="1">017</option>
+                                                    <option value="3">019</option>
+                                                </select>
+                                                <label for="phn-second" class="sr-only">전화번호 두번째자리</label>
+                                                <input id="phn-second" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
+                                                <label for="phn-third" class="sr-only">전화번호 세번째자리</label>
+                                                <input id="phn-third" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">
+                                            </div>
+                                            
+                                            <button class="btn-form" data-modal-open="modal">조회</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="group">
+                            <div class="text-group">
+                                <h3>정보입력 (Table 안에 input이 들어간 경우, 테이블 세로형 사용)</h3>
+                                <p>전화번호, 인증번호 같은 인풋 옆에 버튼이 들어가는 경우</p>
+                                <p>tr > td > form-content > form-wrap > form-group에 flex: 1 적용해야 테이블 전체 사이즈에 맞음</p>
+                                <p>아니면 input이 td의 절반 사이즈로 들어감 (현재 임시로 인라인으로 적용)</p>
+                            </div>
+
+                            <div class="table-content">
+                                <table>
+                                    <caption>이름, 주민등록번호, 휴대전화번호, 인증번호 입력 표</caption>
+                                    <colgroup>
+                                        <col style="width:25%">
+                                        <col style="width:75%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><label for="tbl-inp-name">이름</label></th>
+                                            <td>
+                                                <div class="flex-row">
+                                                    <input id="tbl-inp-name" type="text" placeholder="이름을 입력해주세요" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">휴대전화번호</th>
+                                            <td>
+                                                <div class="form-content">
+                                                    <div class="form-wrap">
+                                                        <div class="form-group" style="flex: 1;">
+                                                            <div class="flex-row mo-column">
+                                                                <div class="flex-row"> 
+                                                                    <select id="phn-agency">
+                                                                        <option>SKT</option>
+                                                                    </select>
+                                                                    <select id="phn-first">
+                                                                        <option>010</option>
+                                                                    </select>
+                                                                    <input type="tel" maxlength="4">
+                                                                    <input type="tel" maxlength="4">
+                                                                </div>
+
+                                                                <button type="button" class="btn-form">인증번호 요청</button>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">인증번호</th>
+                                            <td>
+                                                <div class="form-content">
+                                                    <div class="form-wrap">
+                                                        <div class="form-group" style="flex: 1;">
+                                                            <div class="flex-row mo-column">
+                                                                <label for="auth-code3" class="sr-only">인증번호</label>
+                                                                <input id="auth-code3" type="number" placeholder="인증번호를 입력해주세요">
+                                                                <button class="btn-form">확인</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">복무 시작일</th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <div class="form-group">
+                                                        <div class="date-wrap">
+                                                            <label for="serviceStart" class="sr-only">복무 시작일</label>
+                                                            <input type="date" id="serviceStart" name="serviceStart" class="js-cal js-cal-date" placeholder="YYYY-MM-DD" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================== -->
+
+                </section>
+
+                <section class="bottom-container">
+                    <div class="btn-content cta">
+                        <div class="button-group">
+                            <a href="javascript:void(0);" class="btn-primary" style="width:200px; border-radius:30px;">다음</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div data-include-path="../../views/COMMON/footer.html"></div>
+    </div>
+
+    <div id="fullPopup1" class="layerPopup full fullPopupOn">
+        <!--[D] fullPopupOn 클래스 :: 헤더 스크립트 적용중-->
+        <div class="pop-area">
+            <div class="pop-header">
+                <h2 class="pop-tit">타이틀</h2>
+            </div>
+            <div class="pop-body">
+                <div class="pop-content">
+                    컨텐츠내용
+                </div>
+            </div>
+            <div class="pop-footer">
+                <button type="button" class="btn-pop-primary" data-popup-close="fullPopup1">확인했어요</button>
+            </div>
+            <button type="button" name="button" class="btn btn-close right" data-popup-close="fullPopup1">닫기</button>
+        </div>
+    </div>
+    <div id="fullPopup2" class="layerPopup full fullPopupOn">
+        <!--[D] fullPopupOn 클래스 :: 헤더 스크립트 적용중-->
+        <div class="pop-area">
+            <div class="pop-header">
+                <h2 class="pop-tit">타이틀</h2>
+            </div>
+            <div class="pop-body">
+                <div class="pop-content">
+                    컨텐츠내용
+                </div>
+            </div>
+            <div class="pop-footer">
+                <button type="button" class="btn-pop-primary" data-popup-close="fullPopup2">확인했어요</button>
+            </div>
+            <button type="button" name="button" class="btn btn-close right" data-popup-close="fullPopup2">닫기</button>
+        </div>
+    </div>
+</body>
+</html>
