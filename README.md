@@ -91,9 +91,13 @@
 
 # Project Structure (프로젝트 구조)
 <h2>구조 전략</h2>
+
 - 컴포넌트 단위 분리
+
 - 유틸 클래스 분리 관리
+
 - IE 대응 CSS 별도 분리
+
 
 ```plaintext
 PUB-GUIDE/
