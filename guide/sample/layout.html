@@ -77,9 +77,112 @@
                         <h3>서브 타이틀</h3>
                         <p>서브 타이틀 보조문구</p>
                     </div>
+                    <div class="form-content">
+                        <div class="terms-group">
+                            <ul class="check-box terms">
+                                <li class="check-all-area">
+                                    <input type="checkbox" id="chkAll" />
+                                    <label for="chkAll" class="check-button">
+                                        <span>전체 약관에 동의합니다.</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="check-required-1" class="chkReq" />
+                                    <label for="check-required-1" class="check-button" data-popup-open="fullPopup1">
+                                        <span>개인정보 수집&#183;이용&#183;취급위탁 동의</span>
+                                    </label>
+                                    <button title="개인정보 수집&#183;이용&#183;취급위탁 동의 내용보기" type="button" class="modal" data-popup-open="fullPopup1">내용보기</button>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="check-required-2" class="chkReq" />
+                                    <label for="check-required-2" class="check-button" data-popup-open="fullPopup2">
+                                        <span>본인확인서비스 이용약관</span>
+                                    </label>
+                                    <button title="본인확인서비스 이용약관 내용보기" class="modal" type="button" data-popup-open="fullPopup2">내용보기</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-wrap">
+                            <div class="form-group">
+                                <p class="label-tit">휴대전화번호</p>
+                                <div class="flex-row">
+                                    <label for="phn-first2" class="sr-only">전화번호 선택</label>
+                                    <select id="phn-first2" required="">
+                                        <option value="0">010</option>
+                                        <option value="1">017</option>
+                                        <option value="3">019</option>
+                                    </select>
+                                    <label for="phn-second2" class="sr-only">전화번호 두번째자리</label>
+                                    <input id="phn-second2" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
+                                    <label for="phn-third2" class="sr-only">전화번호 세번째자리</label>
+                                    <input id="phn-third2" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">  
+                                </div><!--//flex-row-->
+                            </div><!--//form-group-->
+                        </div><!--//form-wrap-->
+                        <div class="form-wrap">
+                            <div class="form-group">
+                                <p class="label-tit">인증번호</p>
+                                <div class="flex-row mo-column">
+                                    <label for="auth-code2" class="sr-only">인증번호</label>
+                                    <input id="auth-code2" type="number" name="auth-code2" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)">
+                                    <button class="btn-form">확인</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p class="label-tit">휴대전화번호</p>
+                                <div class="flex-row mo-column">
+                                    <div>
+                                        <label for="phn-first" class="sr-only">전화번호 선택</label>
+                                        <select id="phn-first" required="">
+                                            <option value="0">010</option>
+                                            <option value="1">017</option>
+                                            <option value="3">019</option>
+                                        </select>
+                                        <label for="phn-second" class="sr-only">전화번호 두번째자리</label>
+                                        <input id="phn-second" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
+                                        <label for="phn-third" class="sr-only">전화번호 세번째자리</label>
+                                        <input id="phn-third" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">
+                                    </div>
+                                    <!--[D]:공통 - 알럿참고 -->
+                                    <button class="btn-form" data-modal-open="modal">조회</button>
+                                </div><!--//flex-row-->
+                            </div>
+                        </div>
+                        <div class="form-wrap full">
+                            <div class="form-group">
+                                <p class="label-tit">달력</p>
+                                <div class="date-wrap">
+                                    <label for="serviceStart" class="sr-only">달력</label>
+                                    <input type="date" id="serviceStart" name="serviceStart" class="js-cal js-cal-date" placeholder="YYYY-MM-DD" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-wrap">
+                            <div class="form-group">
+                                <p class="label-tit">광고 수신 동의</p>
+                                <fieldset>
+                                    <legend>광고 수신 동의</legend>
+                                    
+                                    <div class="radio-item style2">
+                                        <input type="radio" name="row3-active" id="row2_active_1" value="" checked>
+                                        <label for="row2_active_1" class="radio">
+                                            <span>동의</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-item style2">
+                                        <input type="radio" name="row3-active" id="row2_active_2" value="">
+                                        <label for="row2_active_2" class="radio">
+                                            <span>비동의</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form"> <!--폼 영역-->
                         <div class="tab-container jsTab">
-                            <nav class="tab-list depth1">
+                            <nav class="tab-list depth2">
                                 <div class="btn-group">
                                     <button type="button" class="tab-item active" data-tab="tab1" aria-selected="true">탭메뉴1</button>
                                     <button type="button" class="tab-item" data-tab="tab2" aria-selected="false">탭메뉴2</button>
@@ -87,102 +190,57 @@
                             </nav>
                             <div class="tab-content">
                                 <div id="tab1" class="tab-panel active">
-                                    <div class="form-content">
-                                        <div class="terms-group">
-                                            <ul class="check-box terms">
-                                                <li class="check-all-area">
-                                                    <input type="checkbox" id="chkAll" />
-                                                    <label for="chkAll" class="check-button">
-                                                        <span>전체 약관에 동의합니다.</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" id="check-required-1" class="chkReq" />
-                                                    <label for="check-required-1" class="check-button" data-popup-open="fullPopup1">
-                                                        <span>개인정보 수집&#183;이용&#183;취급위탁 동의</span>
-                                                    </label>
-                                                    <button title="개인정보 수집&#183;이용&#183;취급위탁 동의 내용보기" type="button" class="modal" data-popup-open="fullPopup1">내용보기</button>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" id="check-required-2" class="chkReq" />
-                                                    <label for="check-required-2" class="check-button" data-popup-open="fullPopup2">
-                                                        <span>본인확인서비스 이용약관</span>
-                                                    </label>
-                                                    <button title="본인확인서비스 이용약관 내용보기" class="modal" type="button" data-popup-open="fullPopup2">내용보기</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="form-wrap">
-                                            <div class="form-group">
-                                                <p class="label-tit">체크박스</p>
-                                                <fieldset>
-                                                    <legend>기본 체크박스</legend>
-                                                    <label class="check">
-                                                        <input type="checkbox" name="row1-active" value="" checked>
-                                                        <span>Check Box</span>
-                                                    </label>
-                                                    <label class="check">
-                                                        <input type="checkbox" name="row1-active" value="">
-                                                        <span>Check Box</span>
-                                                    </label>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="form-wrap">
-                                            <div class="form-group">
-                                                <p class="label-tit">휴대전화번호</p>
-                                                <div class="flex-row">
-                                                    <label for="phn-first2" class="sr-only">전화번호 선택</label>
-                                                    <select id="phn-first2" required="">
-                                                        <option value="0">010</option>
-                                                        <option value="1">017</option>
-                                                        <option value="3">019</option>
-                                                    </select>
-                                                    <label for="phn-second2" class="sr-only">전화번호 두번째자리</label>
-                                                    <input id="phn-second2" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
-                                                    <label for="phn-third2" class="sr-only">전화번호 세번째자리</label>
-                                                    <input id="phn-third2" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">  
-                                                </div><!--//flex-row-->
-                                            </div><!--//form-group-->
-                                        </div><!--//form-wrap-->
-                                        <div class="form-wrap">
-                                            <div class="form-group">
-                                                <p class="label-tit">인증번호</p>
-                                                <div class="flex-row mo-column">
-                                                    <label for="auth-code2" class="sr-only">인증번호</label>
-                                                    <input id="auth-code2" type="number" name="auth-code2" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)">
-                                                    <button class="btn-form">확인</button>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <p class="label-tit">휴대전화번호</p>
-                                                <div class="flex-row mo-column">
-                                                    <div>
-                                                        <label for="phn-first" class="sr-only">전화번호 선택</label>
-                                                        <select id="phn-first" required="">
-                                                            <option value="0">010</option>
-                                                            <option value="1">017</option>
-                                                            <option value="3">019</option>
-                                                        </select>
-                                                        <label for="phn-second" class="sr-only">전화번호 두번째자리</label>
-                                                        <input id="phn-second" name="phn-second" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="4" required="">
-                                                        <label for="phn-third" class="sr-only">전화번호 세번째자리</label>
-                                                        <input id="phn-third" name="phn-third" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" maxlength="4" required="">
-                                                    </div>
-                                                    <!--[D]:공통 - 알럿참고 -->
-                                                    <button class="btn-form" data-modal-open="modal">조회</button>
-                                                </div><!--//flex-row-->
-                                            </div>
-                                        </div>
-                                        <div class="form-wrap full">
-                                            <div class="form-group">
-                                                <p class="label-tit">달력</p>
-                                                <div class="date-wrap">
-                                                    <label for="serviceStart" class="sr-only">달력</label>
-                                                    <input type="date" id="serviceStart" name="serviceStart" class="js-cal js-cal-date" placeholder="YYYY-MM-DD" />
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="table-group">
+                                        <table>
+                                            <caption>캡션내용</caption>
+                                            <colgroup>
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                                <col style="width:34%">
+                                            </colgroup> 
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">항목</th>
+                                                    <th scope="col">항목</th>
+                                                    <th scope="col">항목</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label for="phn-second2" class="sr-only">전화번호</label>
+                                                        <input id="phn" name="phn" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="11" required="">
+                                                    </td>
+                                                    <td>
+                                                        <fieldset class="radio-group">
+                                                            <legend class="sr-only">지원구분 선택</legend>
+                                                            <label class="radio">
+                                                                <input type="radio" name="classification" id="newApplicant" value="신입" checked="">
+                                                                <span>신입</span>
+                                                            </label>
+                                                            <label class="radio">
+                                                                <input type="radio" name="classification" id="careerApplicant" value="경력">
+                                                                <span>경력</span>
+                                                            </label>
+                                                        </fieldset>
+                                                    </td>
+                                                    <td>내용</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="phn-second2" class="sr-only">직접 입력</label>
+                                                        <input id="phn" name="phn" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" maxlength="11" required="">
+                                                    </td>
+                                                    <td>
+                                                        <div class="date-wrap">
+                                                            <label for="serviceStart" class="sr-only">복무 시작일</label>
+                                                            <input type="date" id="serviceStart" name="serviceStart" class="js-cal js-cal-date" placeholder="YYYY-MM-DD" />
+                                                        </div>
+                                                    </td>
+                                                    <td>내용</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                                 <div id="tab2" class="tab-panel">
