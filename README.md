@@ -245,21 +245,18 @@ $(element).on('click', function(e) {
 ## HTML 요소 네이밍
 HTML 요소의 class와 id 네이밍 규칙을 준수하여 의미 전달을 명확하게 한다.<br/>
 요소명이 길어지더라도 의미 전달의 명확성에 목적을 두어 작성한다.<br/>
-```html
-<!-- 전체 컨테이너 -->
-<div class="container">
-  <!-- 영역 묶음 -->
-  <div class="content-area">
-    <div class="content-item">...</div>
-    <div class="content-item">...</div>
-  </div>
-  <!-- 버튼 영역 -->
-  <div class="button-group">
-    <button class="btn btn-primary">확인</button>
-    <button class="btn btn-secondary">취소</button>
-  </div>
-</div>
-```
+- 이름은 영문 소문자로만 시작할 수 있다.
+  - ex) btn-apply-on, box-news, box-reply-open 등
+- id는 camelcase 방식으로 사용한다.
+- 두개의 단어를 사용할 경우에는 이어지는 단어를 대문자로 표기하여 사용한다. (카멜표기법)
+- id는 화면에서 한번만 사용이 되므로, 고유기능을 쉽게 인지할 수 있도록 네이밍한다.
+  - ex) id="btnSch" ( x )   id="btnGnbSearch" ( o )
+- class는 하이픈 방식으로 사용한다. (케밥표기법)
+  - ex) class="btn-blackLine-on", class="link-view"
+- 유사한 용도인 경우 가장 뒤에 숫자를 붙여 사용할 수 있으며 첫번째 이름은 숫자를 생략할 수 있다.
+  - ex) .list-benefit, .list-benefit-02, .list-benefit-03
+- 네이밍의 조합은 **'형태-의미-순서-상태'**을 기본 순서로 사용한다.
+- ex) .btn-confirm-02-on</li>
 
 <br/>
 
@@ -308,5 +305,4 @@ popup.js (팝업)
 - CSS 테마 분리 구조 확장
 - ES6 기반 리팩토링 검토
 - jQuery 의존성 최소화 검토
-- 컴포넌트 모듈화 고도화
 - 금융권 브라우저 대응 전략 고도화
