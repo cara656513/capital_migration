@@ -29,23 +29,35 @@
 <br/>
 <br/>
 
-# 포맷화 예시
-<p>다른 스타일 적용 예시</p>
+# Module Examples
+## 스타일 변경 시 기존 약 90% 이상 시간 단축
+
 <details>
 <summary>input</summary>
-
+<figure class="half">
+    <img src="https://github.com/user-attachments/assets/366cdf15-c3b3-448a-b46b-820a4bc607f5">
+    <img src="https://github.com/user-attachments/assets/040b9d17-0ffc-4493-86e7-f3768057e1f0">
+</figure>
 </details>
 
 <details>
 <summary>button</summary>
-
+<figure class="half">
+    <img src="https://github.com/user-attachments/assets/7216ae12-0027-425b-9409-eb9f6f9b9a50">
+    <img src="">
+</figure>
 </details>
 
 <details>
 <summary>tab</summary>
-
+<figure class="half">
+    <img src="https://github.com/user-attachments/assets/d5a5ba6e-71f4-4c0d-b16b-2b6f89bd3fb3">
+    <img src="">
+</figure>
 </details>
 
+<br/>
+<br/>
 
 <!-- 
 # Technology Stack (기술 스택)
