@@ -50,52 +50,52 @@
 
 # UI Components (기본 공통 컴포넌트)
 - **Alert**: 알림창 및 경고 메시지 UI 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1895" height="917" alt="image" src="https://github.com/user-attachments/assets/44212c56-1a8d-4006-a9d0-08697e81c1ca" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1895" height="917" alt="image" src="https://github.com/user-attachments/assets/44212c56-1a8d-4006-a9d0-08697e81c1ca" />
+    </details>
 
 - **Button**: 다양한 스타일의 버튼 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1326" height="1708" alt="image" src="https://github.com/user-attachments/assets/7216ae12-0027-425b-9409-eb9f6f9b9a50" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1326" height="1708" alt="image" src="https://github.com/user-attachments/assets/7216ae12-0027-425b-9409-eb9f6f9b9a50" />
+    </details>
 
 - **Input**: 입력 필드 및 폼 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1291" height="2410" alt="image" src="https://github.com/user-attachments/assets/366cdf15-c3b3-448a-b46b-820a4bc607f5" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1291" height="2410" alt="image" src="https://github.com/user-attachments/assets/366cdf15-c3b3-448a-b46b-820a4bc607f5" />
+    </details>
 
 - **Popup**: 모달 및 팝업 윈도우 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1893" height="917" alt="image" src="https://github.com/user-attachments/assets/7dd3896a-7ac0-442f-9928-be6ced3f1b73" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1893" height="917" alt="image" src="https://github.com/user-attachments/assets/7dd3896a-7ac0-442f-9928-be6ced3f1b73" />
+    </details>
 
 - **Tab**: 탭 네비게이션 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1297" height="1222" alt="image" src="https://github.com/user-attachments/assets/d5a5ba6e-71f4-4c0d-b16b-2b6f89bd3fb3" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1297" height="1222" alt="image" src="https://github.com/user-attachments/assets/d5a5ba6e-71f4-4c0d-b16b-2b6f89bd3fb3" />
+    </details>
 
 - **Table**: 데이터 테이블 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1266" height="3018" alt="image" src="https://github.com/user-attachments/assets/22f423bd-bce1-48fa-942e-23b414d1de0d" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1266" height="3018" alt="image" src="https://github.com/user-attachments/assets/22f423bd-bce1-48fa-942e-23b414d1de0d" />
+    </details>
 
 - **Toggle**: 토글 스위치 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1295" height="1067" alt="image" src="https://github.com/user-attachments/assets/38db6ace-f354-4452-8856-fcd778554d41" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1295" height="1067" alt="image" src="https://github.com/user-attachments/assets/38db6ace-f354-4452-8856-fcd778554d41" />
+    </details>
 
 - **Terms**: 약관 동의 UI 컴포넌트
-<details>
-<summary>이미지</summary>
-<img width="1289" height="616" alt="image" src="https://github.com/user-attachments/assets/1796c6dc-b5bd-47cd-93ea-618d326049d5" />
-</details>
+    <details>
+    <summary>이미지</summary>
+    <img width="1289" height="616" alt="image" src="https://github.com/user-attachments/assets/1796c6dc-b5bd-47cd-93ea-618d326049d5" />
+    </details>
 
 <br/>
 <br/>
@@ -112,6 +112,9 @@
   <script src="assets/js/lib/swiper-bundle.min.js"></script>
   <script src="assets/js/ui-util.js"></script>
 ```
+
+<br/>
+<br/>
 
 # Project Structure (프로젝트 구조)
 <h2>구조 전략</h2>
