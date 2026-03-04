@@ -28,6 +28,25 @@
 
 <br/>
 <br/>
+
+# 포맷화 예시
+<p>다른 스타일 적용 예시</p>
+<details>
+<summary>input</summary>
+
+</details>
+
+<details>
+<summary>button</summary>
+
+</details>
+
+<details>
+<summary>tab</summary>
+
+</details>
+
+
 <!-- 
 # Technology Stack (기술 스택)
 ## Language
