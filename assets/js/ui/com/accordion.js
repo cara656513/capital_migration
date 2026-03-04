@@ -7,15 +7,15 @@ $(document).ready(function(){
         return {
             open: function(target) {
                 target.addClass("on");
-                //target.attr("title", "´Ý±â");
-                target.find("> .tit button").attr("title", "´Ý±â");//26.2.3 À¥Á¢±Ù¼º
+                //target.attr("title", "ë‹«ê¸°");
+                target.find("> .tit button").attr("title", "ë‹«ê¸°");
 
             
             },
             close: function(target) {
                 target.removeClass("on");
-                //target.attr("title", "¿­±â");
-                target.find("> .tit button").attr("title", "¿­±â");//26.2.3 À¥Á¢±Ù¼º
+                //target.attr("title", "ì—´ê¸°");
+                target.find("> .tit button").attr("title", "ì—´ê¸°");
             },
             toggle: function(target) {
                 if (target.hasClass("on")) {

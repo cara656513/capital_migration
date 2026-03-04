@@ -1,53 +1,24 @@
 # Overview (개요)
 - 프로젝트 이름: MG캐피탈 웹퍼블리싱 소스 공통
-- 프로젝트 설명: MG캐피탈 홈페이지 리뉴얼 프로젝트 종료 후, 웹퍼블리싱 소스를 정리하여 포맷화하였습니다.
+- 프로젝트 설명: MG캐피탈 홈페이지 리뉴얼 프로젝트 종료 후, 웹퍼블리싱 소스를 재사용 가능한 공통 포맷으로 구조화한 가이드 프로젝트.
+
+본 가이드는 UI 컴포넌트 단위 분리 및 브라우저 대응 전략을 포함합니다.
 
 <br/>
 <br/>
 
-# Key Features (주요 기능)
-- **Alert**: 알림창 및 경고 메시지 UI 컴포넌트
-  - [guide/sample/alert.html](guide/sample/alert.html)
+# Browser Support
+본 프로젝트는 금융권 환경을 고려하여 다음 브라우저를 지원합니다.
+- IE11
+- Chrome 104 이하
+- Edge (Chromium 기반)
+- 최신 Chrome
 
-- **Button**: 다양한 스타일의 버튼 컴포넌트
-  - [guide/sample/button.html](guide/sample/button.html)
-
-- **Editor**: 텍스트 에디터 UI 컴포넌트
-  - [guide/sample/edt.html](guide/sample/edt.html)
-
-- **Input**: 입력 필드 및 폼 컴포넌트
-  - [guide/sample/input.html](guide/sample/input.html)
-
-- **Layout**: 페이지 레이아웃 및 구조
-  - [guide/sample/layout.html](guide/sample/layout.html)
-
-- **List**: 데이터 리스트 표시 컴포넌트
-  - [guide/sample/list.html](guide/sample/list.html)
-
-- **Popup**: 모달 및 팝업 윈도우 컴포넌트
-  - [guide/sample/popup.html](guide/sample/popup.html)
-
-- **Tab**: 탭 네비게이션 컴포넌트
-  - [guide/sample/tab.html](guide/sample/tab.html)
-
-- **Table**: 데이터 테이블 컴포넌트
-  - [guide/sample/table.html](guide/sample/table.html)
-
-- **Toggle**: 토글 스위치 컴포넌트
-  - [guide/sample/toggle.html](guide/sample/toggle.html)
-
-- **Terms**: 약관 동의 UI 컴포넌트
-  - [guide/sample/terms.html](guide/sample/terms.html)
-
-<br/>
-<br/>
-
-# Improvements (개선점)
-- **재사용 예시**:
-  - 다른 css 파일 적용했을 때
-
-- **버전별 적용**:
-  - 설명, 이미지
+## 대응 전략
+- IE 전용 스타일은 `ie.css`에서 별도 관리
+- 최신 기능은 `@supports`를 활용하여 분기 처리
+- 최신 브라우저 우선 설계 → 하위 브라우저 보완 방식 적용
+- ie.css는 향후 추가 요구사항 및 브라우저 이슈에 따라 지속적으로 보완 예정
 
 <br/>
 <br/>
@@ -71,6 +42,47 @@
 <br/>
 <br/>
 
+# UI Components (기본 공통 컴포넌트)
+- **Alert**: 알림창 및 경고 메시지 UI 컴포넌트
+  - [guide/sample/alert.html](guide/sample/alert.html)
+
+- **Button**: 다양한 스타일의 버튼 컴포넌트
+  - [guide/sample/button.html](guide/sample/button.html)
+
+- **Input**: 입력 필드 및 폼 컴포넌트
+  - [guide/sample/input.html](guide/sample/input.html)
+
+- **Popup**: 모달 및 팝업 윈도우 컴포넌트
+  - [guide/sample/popup.html](guide/sample/popup.html)
+
+- **Tab**: 탭 네비게이션 컴포넌트
+  - [guide/sample/tab.html](guide/sample/tab.html)
+
+- **Table**: 데이터 테이블 컴포넌트
+  - [guide/sample/table.html](guide/sample/table.html)
+
+- **Toggle**: 토글 스위치 컴포넌트
+  - [guide/sample/toggle.html](guide/sample/toggle.html)
+
+- **Terms**: 약관 동의 UI 컴포넌트
+  - [guide/sample/terms.html](guide/sample/terms.html)
+
+<br/>
+<br/>
+
+# Getting Started
+- css 로드 순서
+```html
+  <link rel="stylesheet" href="assets/css/com/common.css">
+  <link rel="stylesheet" href="assets/css/com/style.css">
+```
+- js 로드 순서
+```html
+  <script src="assets/js/lib/jquery-1.12.4.js"></script>
+  <script src="assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="assets/js/ui-util.js"></script>
+```
+
 # Project Structure (프로젝트 구조)
 ```plaintext
 PUB-GUIDE/
@@ -80,17 +92,17 @@ PUB-GUIDE/
 │   ├── css/                             # 스타일시트
 │   │   ├── swiper-bundle.min.css        # Swiper 라이브러리 CSS
 │   │   └── com/                         # 공통 컴포넌트 CSS
-│   │       ├── button.css               # 버튼 스타일
-│   │       ├── common.css               # 공통 스타일
-│   │       ├── default.css              # 기본 스타일
+│   │       ├── default.css              # 기본 초기화 및 베이스 스타일
+│   │       ├── common.css               # 공통 스타일 정의
 │   │       ├── fonts.css                # 폰트 스타일
-│   │       ├── ie.css                   # IE 호환성 스타일
-│   │       ├── input.css                # 입력 필드 스타일
 │   │       ├── layout.css               # 레이아웃 스타일
+│   │       ├── button.css               # 버튼 스타일
+│   │       ├── input.css                # 입력 필드 스타일
 │   │       ├── nav.css                  # 네비게이션 스타일
 │   │       ├── style.css                # 메인 스타일
 │   │       ├── tab.css                  # 탭 스타일
 │   │       ├── table.css                # 테이블 스타일
+│   │       ├── ie.css                   # IE 호환성 스타일
 │   │       └── ui-util.css              # UI 유틸 스타일
 │   ├── fonts/                           # 폰트 파일
 │   ├── images/                          # 이미지 파일
@@ -98,7 +110,7 @@ PUB-GUIDE/
 │   │       ├── ie11/                    # IE11 호환 이미지
 │   │       └── svg/                     # SVG 파일
 │   └── js/                              # 자바스크립트 파일
-│       ├── include.js                   # 포함 파일
+│       ├── include.js                   # 공통 include 처리
 │       ├── lib/                         # 외부 라이브러리
 │       │   ├── jquery-1.12.4.js         # jQuery 라이브러리
 │       │   ├── jquery-ui.min.js         # jQuery UI 라이브러리
@@ -111,13 +123,10 @@ PUB-GUIDE/
 │               ├── datepicker.js        # 날짜 선택기
 │               ├── fake_select.js       # 커스텀 셀렉트
 │               ├── finance.js           # 재무 관련 스크립트
-│               ├── finance_test.js      # 재무 테스트 스크립트
 │               ├── input.js             # 입력 필드 스크립트
 │               ├── layout.js            # 레이아웃 스크립트
 │               ├── nav.js               # 네비게이션 스크립트
 │               ├── popup.js             # 팝업 스크립트
-│               ├── popup_1.js           # 팝업 변형
-│               ├── popup_new.js         # 새로운 팝업
 │               ├── tab.js               # 탭 스크립트
 │               ├── table.js             # 테이블 스크립트
 │               └── terms.js             # 약관 스크립트
@@ -131,32 +140,22 @@ PUB-GUIDE/
 │   └── sample/                          # HTML 샘플 파일
 │       ├── alert.html                   # 알림 샘플
 │       ├── button.html                  # 버튼 샘플
-│       ├── edt.html                     # 에디터 샘플
 │       ├── input.html                   # 입력 필드 샘플
-│       ├── layout.html                  # 레이아웃 샘플
-│       ├── list.html                    # 리스트 샘플
 │       ├── popup.html                   # 팝업 샘플
-│       ├── process.html                 # 프로세스 샘플
-│       ├── request.html                 # 요청 샘플
 │       ├── tab.html                     # 탭 샘플
 │       ├── table.html                   # 테이블 샘플
 │       ├── terms.html                   # 약관 샘플
 │       ├── toggle.html                  # 토글 샘플
-│       └── write.html                   # 작성 샘플
 └── views/                               # 페이지 뷰
-    ├── COM/                             # 공통 페이지
-    │   ├── COM-BSC-C002.html            # 페이지 템플릿
-    │   ├── COM-BSC-C015.html            # 페이지 템플릿
-    │   ├── COM-BSC-C01502.html          # 페이지 템플릿
-    │   ├── COM-BSC-C021.html            # 페이지 템플릿
-    │   ├── COM-BSC-C022.html            # 페이지 템플릿
-    │   ├── COM-BSC-C031.html            # 페이지 템플릿
-    │   ├── installAnySign.html          # AnySign 설치 페이지
-    │   └── MGC-MENU-001P.html           # 메뉴 페이지
     └── COMMON/                          # 공통 컴포넌트
         ├── footer.html                  # 푸터
         └── header.html                  # 헤더
 ```
+
+## 구조 전략
+- 컴포넌트 단위 분리
+- 유틸 클래스 분리 관리
+- IE 대응 CSS 별도 분리
 
 <br/>
 <br/>
@@ -292,3 +291,12 @@ popup.js (팝업)
 
 <br/>
 <br/>
+
+# Improvements (개선점)
+## 향후 개선 예정 사항
+
+- CSS 테마 분리 구조 확장
+- ES6 기반 리팩토링 검토
+- jQuery 의존성 최소화 검토
+- 컴포넌트 모듈화 고도화
+- 금융권 브라우저 대응 전략 고도화

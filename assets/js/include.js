@@ -5,27 +5,27 @@ $(function(){
     var $this = $(this);
     $this.load(url, function(res, status, xhr){
       if(status === 'error'){
-        $this.html('ë¡œë“œ ?ï¿½ï¿½?ï¿½ï¿½: ' + xhr.status + ' ' + xhr.statusText + '<br><code>'+url+'</code>');
+        $this.html('·Îµå ??????: ' + xhr.status + ' ' + xhr.statusText + '<br><code>'+url+'</code>');
       } else {
-        // include ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ nav.js ?ï¿½ï¿½?ï¿½ï¿½
+        // include ????? ??? nav.js ??????
         if (path.indexOf('nav.html') > -1 || path.indexOf('lnb.html') > -1) {
-          // nav.jsï¿½? ?ï¿½ï¿½ï¿½? ë¡œë“œ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
+          // nav.js?? ????? ·Îµå?????? ???????? ??????
           if (typeof window.mobileMenu === 'undefined') {
-            // nav.js ë¡œë“œ
+            // nav.js ·Îµå
             $.getScript('../../assets/js/ui/com/nav.js', function() {
-              console.log('nav.js ë¡œë“œ ?ï¿½ï¿½ï¿½?');
+              console.log('nav.js ·Îµå ?????');
             });
           } else {
-            // ?ï¿½ï¿½ï¿½? ë¡œë“œ?ï¿½ï¿½ ê²½ìš° ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+            // ????? ·Îµå??? °æ¿ì ????????? ?????????
             if (typeof window.mobileMenu === 'function') window.mobileMenu();
             if (typeof window.menuToggle === 'function') window.menuToggle();
             if (typeof window.headerMenu === 'function') window.headerMenu();
           }
           
-          // ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ë²¤íŠ¸ ?ï¿½ï¿½ë°”ì¸?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
+          // ???????? ???º¥Æ® ???¹ÙÀÎ??? ??????
           setTimeout(function() {
             if (typeof window.bindScrollEvents === 'function') {
-              console.log('?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ë²¤íŠ¸ ?ï¿½ï¿½ë°”ì¸?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½');
+              console.log('???????? ???º¥Æ® ???¹ÙÀÎ??? ??????');
               window.bindScrollEvents();
             }
           }, 100);
