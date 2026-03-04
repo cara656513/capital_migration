@@ -216,7 +216,7 @@ label input[type="checkbox"]:disabled,
 .textarea-wrap .char-counter .current { color:var(--color-2); font-weight:var(--font-w-m); }
 
 /* =============================================
-    #라디오가 버튼 스타일
+    #라디오가 버튼 스타일 .r-button
 ============================================= */
 /* label > input */
 .form-group.r-button { display:flex; flex-wrap:wrap; }
@@ -240,7 +240,7 @@ label input[type="checkbox"]:disabled,
 .r-button input[type="radio"]:checked + label.radio { background:var(--white); border-color:var(--primary); color:var(--primary); font-weight:var(--font-w-b); }
 
 /* =============================================
-    #토글 스위치
+    #토글 스위치 .toggle
 ============================================= */
 /** 기본 토글 **/
 label.toggle {
@@ -323,7 +323,6 @@ input[type="date"],
 input[type="month"] { appearance:none; -webkit-appearance:none; padding-right:10px; }
 
 /* 커스텀 달력 버튼 */
-.date-wrap:has(button) input {  background:transparent; }
 input[type="month"]+ button,
 input[type="date"] + button { position:absolute; right:10px; top:50%; transform:translate(0, -50%); z-index:2; display:block; width:24px; height:24px; font-size:0; background-image:var(--form-date-ico); background-size:18px; background-repeat:no-repeat;; background-position:center; }
 
@@ -488,48 +487,21 @@ ul.check-box.terms li .modal { position:absolute; top:50%; right:20px; transform
     label.check,
     label.radio,
     label.toggle,
-    label.button {
-        display:inline-flex;
-        align-items:center;
-    }
+    label.button { display:inline-flex; align-items:center; }
 
     /* focus */
-    label.button:focus-within {
-        outline:2px solid var(--form-active);
-        outline-offset:4px;
-        z-index:2;
-    }
+    label.button:focus-within { outline:2px solid var(--form-active); outline-offset:4px; z-index:2; }
 
     /* 라디오 버튼 탭 */
-    .r-button input[type="radio"]:checked + label.radio {
-        background:var(--white);
-        border-color:var(--primary);
-        color:var(--primary);
-        font-weight:var(--font-w-b);
-    }
+    .r-button input[type="radio"]:checked + label.radio { background:var(--white); border-color:var(--primary); color:var(--primary); font-weight:var(--font-w-b); }
 
     /* form-group 에러 */
     .form-group.is-error input,
     .form-group.is-error select,
-    .form-group.is-error textarea {
-        border:1px solid var(--error);
-    }
-
-    /* date-wrap */
-    .date-wrap.has-button input[type="date"]::-webkit-calendar-picker-indicator,
-    .date-wrap.has-button input[type="month"]::-webkit-calendar-picker-indicator {
-        display:none;
-    }
-
-    .date-wrap.has-button input {
-        background:transparent;
-    }
+    .form-group.is-error textarea { border:1px solid var(--error); }
 
     /* 약관 */
-    .terms.no-check-all li:first-child {
-        border-top:1px solid var(--color-2);
-    }
-
+    .terms.no-check-all li:first-child { border-top:1px solid var(--color-2); }
     .form-content.has-terms .info-list .m-dot li { margin-top:18px; }
 
 }
