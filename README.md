@@ -6,26 +6,38 @@
 <br/>
 
 # Key Features (주요 기능)
-- **alert**:
-  - 설명, 이미지
+- **Alert**: 알림창 및 경고 메시지 UI 컴포넌트
+  - [guide/sample/alert.html](guide/sample/alert.html)
 
-- **button**:
-  - 설명, 이미지
+- **Button**: 다양한 스타일의 버튼 컴포넌트
+  - [guide/sample/button.html](guide/sample/button.html)
 
-- **edt**:
-  - 설명, 이미지
+- **Editor**: 텍스트 에디터 UI 컴포넌트
+  - [guide/sample/edt.html](guide/sample/edt.html)
 
-- **input**:
-  - 설명, 이미지
+- **Input**: 입력 필드 및 폼 컴포넌트
+  - [guide/sample/input.html](guide/sample/input.html)
 
-- **layout**:
-  - 설명, 이미지
+- **Layout**: 페이지 레이아웃 및 구조
+  - [guide/sample/layout.html](guide/sample/layout.html)
 
-- **list**:
-  - 설명, 이미지
+- **List**: 데이터 리스트 표시 컴포넌트
+  - [guide/sample/list.html](guide/sample/list.html)
 
-- **popup**:
-  - 설명, 이미지
+- **Popup**: 모달 및 팝업 윈도우 컴포넌트
+  - [guide/sample/popup.html](guide/sample/popup.html)
+
+- **Tab**: 탭 네비게이션 컴포넌트
+  - [guide/sample/tab.html](guide/sample/tab.html)
+
+- **Table**: 데이터 테이블 컴포넌트
+  - [guide/sample/table.html](guide/sample/table.html)
+
+- **Toggle**: 토글 스위치 컴포넌트
+  - [guide/sample/toggle.html](guide/sample/toggle.html)
+
+- **Terms**: 약관 동의 UI 컴포넌트
+  - [guide/sample/terms.html](guide/sample/terms.html)
 
 <br/>
 <br/>
@@ -40,8 +52,8 @@
 <br/>
 <br/>
 
-# 5. Technology Stack (기술 스택)
-## 5.1 Language
+# Technology Stack (기술 스택)
+## Language
 |  |  |
 |-----------------|-----------------|
 | HTML5    |<img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">| 
@@ -50,11 +62,11 @@
 
 <br/>
 
-## 5.2 Frotend
+## Frotend
 |  |  |  |
 |-----------------|-----------------|-----------------|
-| Swiper    |  <img src="https://github.com/user-attachments/assets/" alt="Swiper" width="100"> |
-| jquery    |  <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white" alt="jquery" width="100"> |
+| Swiper    |  <img src="https://swiperjs.com/images/swiper-logo.svg" alt="Swiper" width="100"> |11.2.10|
+| jquery    |  <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white" alt="jquery" width="100"> |1.12.4|
 
 <br/>
 <br/>
@@ -151,95 +163,131 @@ PUB-GUIDE/
 
 # Coding Convention
 ## 명명 규칙
-* 상수 : 영문 대문자 + 스네이크 케이스
+* **상수**: 영문 대문자 + 스네이크 케이스
+```javascript
+const MAX_WIDTH = 1200;
+const DEFAULT_TIMEOUT = 5000;
 ```
-const NAME_ROLE;
-```
-* 변수 & 함수 : 카멜케이스
-```
-// state
-const [isLoading, setIsLoading] = useState(false);
-const [isLoggedIn, setIsLoggedIn] = useState(false);
-const [errorMessage, setErrorMessage] = useState('');
-const [currentUser, setCurrentUser] = useState(null);
+
+* **변수 & 함수**: 카멜케이스
+```javascript
+// 일반 변수
+let currentCount = 0;
+let isActive = false;
+let userList = [];
+
+// DOM 요소: 'el'로 시작
+const elButton = document.querySelector('.btn');
+const elModal = document.getElementById('modal');
 
 // 배열 - 복수형 이름 사용
-const datas = [];
+const items = [];
+const elements = document.querySelectorAll('.item');
 
 // 정규표현식: 'r'로 시작
-const = rName = /.*/;
+const rEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const rPhoneNumber = /^\d{10,11}$/;
 
 // 이벤트 핸들러: 'on'으로 시작
-const onClick = () => {};
-const onChange = () => {};
+const onClick = function(e) {};
+const onChange = function(e) {};
 
 // 반환 값이 불린인 경우: 'is'로 시작
-const isLoading = false;
+const isVisible = true;
+const isDisabled = false;
 
-// Fetch함수: method(get, post, put, del)로 시작
-const getEnginList = () => {...}
+// 함수: 동작을 나타내는 동사로 시작
+const getData = function() { ... };
+const setData = function(data) { ... };
+const removeItem = function(id) { ... };
 ```
 
 <br/>
 
 ## 블록 구문
-```
+```javascript
 // 한 줄짜리 블록일 경우라도 {}를 생략하지 않고, 명확히 줄 바꿈 하여 사용한다
-// good
-if(true){
-  return 'hello'
+// Good
+if (true) {
+  return 'hello';
 }
 
-// bad
-if(true) return 'hello'
+// Bad
+if (true) return 'hello';
 ```
 
 <br/>
 
 ## 함수
-```
-함수는 함수 표현식을 사용하며, 화살표 함수를 사용한다.
+```javascript
+// 함수 선언식 또는 함수 표현식 사용
 // Good
-const fnName = () => {};
+const fnName = function() { };
+function fnName() { }
 
-// Bad
-function fnName() {};
+// jQuery 콜백
+$(element).on('click', function(e) {
+  // 구현부
+});
 ```
 
 <br/>
 
-## 태그 네이밍
-Styled-component태그 생성 시 아래 네이밍 규칙을 준수하여 의미 전달을 명확하게 한다.<br/>
-태그명이 길어지더라도 의미 전달의 명확성에 목적을 두어 작성한다.<br/>
-전체 영역: Container<br/>
-영역의 묶음: {Name}Area<br/>
-의미없는 태그: <><br/>
-```
-<Container>
-  <ContentsArea>
-    <Contents>...</Contents>
-    <Contents>...</Contents>
-  </ContentsArea>
-</Container>
+## HTML 요소 네이밍
+HTML 요소의 class와 id 네이밍 규칙을 준수하여 의미 전달을 명확하게 한다.<br/>
+요소명이 길어지더라도 의미 전달의 명확성에 목적을 두어 작성한다.<br/>
+```html
+<!-- 전체 컨테이너 -->
+<div class="container">
+  <!-- 영역 묶음 -->
+  <div class="content-area">
+    <div class="content-item">...</div>
+    <div class="content-item">...</div>
+  </div>
+  <!-- 버튼 영역 -->
+  <div class="button-group">
+    <button class="btn btn-primary">확인</button>
+    <button class="btn btn-secondary">취소</button>
+  </div>
+</div>
 ```
 
 <br/>
 
 ## 폴더 네이밍
-카멜 케이스를 기본으로 하며, 컴포넌트 폴더일 경우에만 파스칼 케이스로 사용한다.
+소문자와 하이픈(kebab-case)을 사용하여 일관성 있게 관리한다.
 ```
-// 카멜 케이스
-camelCase
-// 파스칼 케이스
-PascalCase
+// Good
+assets/
+js/
+userdata/
+
+// Bad
+Assets/
+Js/
+UserData/
 ```
 
 <br/>
 
 ## 파일 네이밍
 ```
-컴포넌트일 경우만 .jsx 확장자를 사용한다. (그 외에는 .js)
-customHook을 사용하는 경우 : use + 함수명
+// JavaScript 파일
+script.js
+ui-util.js
+
+// CSS 파일
+style.css
+button.css
+
+// HTML 파일
+index.html
+alert.html
+
+// 공통 UI 스크립트의 경우 기능명으로 명명
+accordion.js (아코디언)
+datepicker.js (날짜 선택기)
+popup.js (팝업)
 ```
 
 <br/>
