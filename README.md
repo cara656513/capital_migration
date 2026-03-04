@@ -34,25 +34,25 @@
 
 <details>
 <summary>input</summary>
-<figure class="half">
-    <img src="https://github.com/user-attachments/assets/366cdf15-c3b3-448a-b46b-820a4bc607f5">
-    <img src="https://github.com/user-attachments/assets/040b9d17-0ffc-4493-86e7-f3768057e1f0">
+<figure style="display:flex; gap:10px;">
+    <img width="48%" src="https://github.com/user-attachments/assets/366cdf15-c3b3-448a-b46b-820a4bc607f5">
+    <img width="48%" src="https://github.com/user-attachments/assets/040b9d17-0ffc-4493-86e7-f3768057e1f0">
 </figure>
 </details>
 
 <details>
 <summary>button</summary>
-<figure class="half">
-    <img src="https://github.com/user-attachments/assets/7216ae12-0027-425b-9409-eb9f6f9b9a50">
-    <img src="">
+<figure style="display:flex; gap:10px;">
+    <img width="48%" src="https://github.com/user-attachments/assets/7216ae12-0027-425b-9409-eb9f6f9b9a50">
+    <img width="48%" src="https://github.com/user-attachments/assets/ba552bce-e665-463b-8817-918548067b76">
 </figure>
 </details>
 
 <details>
 <summary>tab</summary>
-<figure class="half">
-    <img src="https://github.com/user-attachments/assets/d5a5ba6e-71f4-4c0d-b16b-2b6f89bd3fb3">
-    <img src="">
+<figure style="display:flex; gap:10px;">
+    <img width="48%" src="https://github.com/user-attachments/assets/d5a5ba6e-71f4-4c0d-b16b-2b6f89bd3fb3">
+    <img width="48%" src="https://github.com/user-attachments/assets/3a5fca1b-6a51-4e07-b8ae-24528770d189">
 </figure>
 </details>
 
