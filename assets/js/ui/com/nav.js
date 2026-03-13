@@ -585,18 +585,19 @@ function initFontSize() {
     var KEY = "fontSizeNormalChecked";
     var root = document.documentElement;
 
-    function apply(checked) {
-        root.classList.toggle("font-big", !!checked);
-    }
+    // function apply(checked) {
+    //     root.classList.toggle("font-big", !!checked);
+    // }
 
     var saved = localStorage.getItem(KEY);
     var checked = saved === null ? false : saved === "true";
 
     checkbox.checked = checked;
-    apply(checked);
+        // apply(checked);
 
     checkbox.addEventListener("change", function () {
         localStorage.setItem(KEY, this.checked ? "true" : "false");
-        apply(this.checked);
+
+        // apply(this.checked);
     });
 }
